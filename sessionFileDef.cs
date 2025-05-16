@@ -12,7 +12,7 @@ public class sessionFileDef
     public Trigger trigger { get; set; }
     public MultiSelect multiSelection { get; set; }
     public List<Board> boards { get; set; }
-    public List<PlotPage> plotPageConfig { get; set; }
+    public PlotPageConfig plotPageConfig { get; set; }
 }
 
 public class Channel
@@ -169,7 +169,7 @@ public class Board
 //    }
 //}
 
-public class PlotPage
+public class PlotPageConfig
 {
     public int numPages { get; set; }
     public int activePage { get; set; }
@@ -177,15 +177,64 @@ public class PlotPage
     public List<int> activeChans { get; set; }
     public int selectedPlotPageIndex { get; set; }
     public int nPageConfigs { get; set; }
-    public PlotObj DefaultPlotPage1 { get; set; }
+    public Dictionary<string, PlotPageDetail> DefaultPlotPages { get; set; } = new();
 }
 
-public class PlotObj
+public class PlotPageDetail
 {
-    public bool showGrid { get; set; }
-    public string colorScheme { get; set; }
+    public List<PlotObject> plotObjects { get; set; }
+    public List<int> selChans { get; set; }
+    public int axesPerPage { get; set; }
 }
 
+public class PlotObject
+{
+    public string typePlot { get; set; }
+    public string ChannelName { get; set; }
+    public int ChannelInd { get; set; }
+    public string ChannelEU { get; set; }
+    public double ChannelSens { get; set; }
+    public double ChannelGain { get; set; }
+    public double ChannelDCOffset { get; set; }
+    public double ChannelVoltRange { get; set; }
+    public string ChannelClipping { get; set; }
+    public double maxValAllChans { get; set; }
+    public int clipCount { get; set; }
+    public List<int> chanIdx { get; set; }
+    public List<int> pntInBlk { get; set; }
+    public double vRange { get; set; }
+    public double Fs { get; set; }
+    public int blocksize { get; set; }
+    public double timePerBlock { get; set; }
+    public bool noReduction { get; set; }
+    public string ReductionMethod { get; set; }
+    public List<object> listeners { get; set; }
+    public int procBlockCount { get; set; }
+    public int blockSinceReset { get; set; }
+    public int nextDraw { get; set; }
+    public int drawFrequency { get; set; }
+    public double totalProcessTime { get; set; }
+    public int COUNTS_MODE { get; set; }
+    public int VOLTS_MODE { get; set; }
+    public int EU_MODE { get; set; }
+    public int unitsMode { get; set; }
+    public string UnitsModeDesc { get; set; }
+    public int MISSING_BLOCK_USE_NAN { get; set; }
+    public int MISSING_BLOCK_USE_PREV_BLOCK { get; set; }
+    public int MISSING_BLOCK_USE_NOTHING { get; set; }
+    public int MissingBlockStrategy { get; set; }
+    public double voltsPerCount { get; set; }
+    public List<int> LineColor { get; set; }
+    public string LineStyle { get; set; }
+    public PlotData Data { get; set; }
+    public bool firstDraw { get; set; }
+}
+
+public class PlotData
+{
+    public List<double> x { get; set; }
+    public List<double> y { get; set; }
+}
 
 //public class dynRangeObj
 //{

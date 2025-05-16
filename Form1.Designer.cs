@@ -46,10 +46,13 @@
             this.sampRateComboBox = new System.Windows.Forms.ComboBox();
             this.dataControlPanel = new System.Windows.Forms.TableLayoutPanel();
             this.uploadSettingsBtn = new System.Windows.Forms.Button();
-            this.startStopDataFlowBtn = new System.Windows.Forms.Button();
-            this.startStopRecordDataBtn = new System.Windows.Forms.Button();
+            this.startStopDataFlowBtn = new System.Windows.Forms.CheckBox();
+            this.startStopDataRecordBtn = new System.Windows.Forms.CheckBox();
             this.infoPanel = new System.Windows.Forms.TableLayoutPanel();
             this.dataLocationLabel = new System.Windows.Forms.Label();
+            this.storageSpaceLabel = new System.Windows.Forms.Label();
+            this.dataFlowStatusLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.channelConfigTable)).BeginInit();
             this.mainLayoutPanel.SuspendLayout();
             this.globalSettingsPanel.SuspendLayout();
@@ -74,7 +77,7 @@
             this.channelConfigTable.Name = "channelConfigTable";
             this.channelConfigTable.RowHeadersWidth = 51;
             this.channelConfigTable.RowTemplate.Height = 24;
-            this.channelConfigTable.Size = new System.Drawing.Size(1035, 648);
+            this.channelConfigTable.Size = new System.Drawing.Size(1035, 653);
             this.channelConfigTable.TabIndex = 0;
             // 
             // mainLayoutPanel
@@ -96,7 +99,7 @@
             this.mainLayoutPanel.RowCount = 3;
             this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.34512F));
             this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.65488F));
-            this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.mainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.mainLayoutPanel.Size = new System.Drawing.Size(1282, 750);
             this.mainLayoutPanel.TabIndex = 1;
@@ -390,7 +393,7 @@
             this.dataControlPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.dataControlPanel.Controls.Add(this.uploadSettingsBtn, 0, 2);
             this.dataControlPanel.Controls.Add(this.startStopDataFlowBtn, 0, 3);
-            this.dataControlPanel.Controls.Add(this.startStopRecordDataBtn, 0, 4);
+            this.dataControlPanel.Controls.Add(this.startStopDataRecordBtn, 0, 4);
             this.dataControlPanel.Location = new System.Drawing.Point(1035, 59);
             this.dataControlPanel.Margin = new System.Windows.Forms.Padding(0);
             this.dataControlPanel.Name = "dataControlPanel";
@@ -407,7 +410,7 @@
             this.dataControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.dataControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.dataControlPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.dataControlPanel.Size = new System.Drawing.Size(246, 648);
+            this.dataControlPanel.Size = new System.Drawing.Size(246, 653);
             this.dataControlPanel.TabIndex = 4;
             // 
             // uploadSettingsBtn
@@ -422,7 +425,7 @@
             this.uploadSettingsBtn.Name = "uploadSettingsBtn";
             this.uploadSettingsBtn.Size = new System.Drawing.Size(246, 60);
             this.uploadSettingsBtn.TabIndex = 0;
-            this.uploadSettingsBtn.Text = "Upload Settings";
+            this.uploadSettingsBtn.Text = " Upload Settings";
             this.uploadSettingsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.uploadSettingsBtn.UseVisualStyleBackColor = true;
             // 
@@ -431,32 +434,37 @@
             this.startStopDataFlowBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.startStopDataFlowBtn.Appearance = System.Windows.Forms.Appearance.Button;
+            this.startStopDataFlowBtn.AutoSize = true;
             this.startStopDataFlowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startStopDataFlowBtn.Image = global::RTD2_CSharp.Properties.Resources.Play_1_Normal_Green_icon32;
             this.startStopDataFlowBtn.Location = new System.Drawing.Point(0, 180);
             this.startStopDataFlowBtn.Margin = new System.Windows.Forms.Padding(0);
             this.startStopDataFlowBtn.Name = "startStopDataFlowBtn";
             this.startStopDataFlowBtn.Size = new System.Drawing.Size(246, 60);
-            this.startStopDataFlowBtn.TabIndex = 1;
-            this.startStopDataFlowBtn.Text = "Play Data";
+            this.startStopDataFlowBtn.TabIndex = 3;
+            this.startStopDataFlowBtn.Text = "      Play Data";
+            this.startStopDataFlowBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.startStopDataFlowBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.startStopDataFlowBtn.UseVisualStyleBackColor = true;
             // 
-            // startStopRecordDataBtn
+            // startStopDataRecordBtn
             // 
-            this.startStopRecordDataBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.startStopDataRecordBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.startStopRecordDataBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startStopRecordDataBtn.Image = global::RTD2_CSharp.Properties.Resources.Record_Normal_icon32;
-            this.startStopRecordDataBtn.Location = new System.Drawing.Point(0, 240);
-            this.startStopRecordDataBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.startStopRecordDataBtn.Name = "startStopRecordDataBtn";
-            this.startStopRecordDataBtn.Size = new System.Drawing.Size(246, 60);
-            this.startStopRecordDataBtn.TabIndex = 2;
-            this.startStopRecordDataBtn.Text = "Start Record";
-            this.startStopRecordDataBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.startStopRecordDataBtn.UseVisualStyleBackColor = true;
+            this.startStopDataRecordBtn.Appearance = System.Windows.Forms.Appearance.Button;
+            this.startStopDataRecordBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.startStopDataRecordBtn.Image = global::RTD2_CSharp.Properties.Resources.Record_Normal_icon32;
+            this.startStopDataRecordBtn.Location = new System.Drawing.Point(0, 240);
+            this.startStopDataRecordBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.startStopDataRecordBtn.Name = "startStopDataRecordBtn";
+            this.startStopDataRecordBtn.Size = new System.Drawing.Size(246, 60);
+            this.startStopDataRecordBtn.TabIndex = 0;
+            this.startStopDataRecordBtn.Text = "     Start Record";
+            this.startStopDataRecordBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.startStopDataRecordBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.startStopDataRecordBtn.UseVisualStyleBackColor = true;
             // 
             // infoPanel
             // 
@@ -465,17 +473,20 @@
             this.infoPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.infoPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.infoPanel.ColumnCount = 4;
-            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 757F));
-            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
-            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
-            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
+            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.7F));
+            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.7F));
+            this.infoPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.6F));
             this.infoPanel.Controls.Add(this.dataLocationLabel, 0, 0);
-            this.infoPanel.Location = new System.Drawing.Point(0, 715);
+            this.infoPanel.Controls.Add(this.storageSpaceLabel, 1, 0);
+            this.infoPanel.Controls.Add(this.dataFlowStatusLabel, 2, 0);
+            this.infoPanel.Controls.Add(this.label1, 3, 0);
+            this.infoPanel.Location = new System.Drawing.Point(0, 712);
             this.infoPanel.Margin = new System.Windows.Forms.Padding(0);
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.RowCount = 1;
-            this.infoPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.infoPanel.Size = new System.Drawing.Size(1035, 35);
+            this.infoPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.infoPanel.Size = new System.Drawing.Size(1035, 38);
             this.infoPanel.TabIndex = 5;
             // 
             // dataLocationLabel
@@ -484,12 +495,56 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataLocationLabel.AutoSize = true;
+            this.dataLocationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataLocationLabel.Location = new System.Drawing.Point(4, 1);
             this.dataLocationLabel.Name = "dataLocationLabel";
-            this.dataLocationLabel.Size = new System.Drawing.Size(751, 38);
+            this.dataLocationLabel.Size = new System.Drawing.Size(509, 45);
             this.dataLocationLabel.TabIndex = 0;
             this.dataLocationLabel.Text = "Data Filename:";
             this.dataLocationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // storageSpaceLabel
+            // 
+            this.storageSpaceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.storageSpaceLabel.AutoSize = true;
+            this.storageSpaceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storageSpaceLabel.Location = new System.Drawing.Point(517, 1);
+            this.storageSpaceLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.storageSpaceLabel.Name = "storageSpaceLabel";
+            this.storageSpaceLabel.Size = new System.Drawing.Size(172, 45);
+            this.storageSpaceLabel.TabIndex = 1;
+            this.storageSpaceLabel.Text = "Storage Space:";
+            this.storageSpaceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dataFlowStatusLabel
+            // 
+            this.dataFlowStatusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataFlowStatusLabel.AutoSize = true;
+            this.dataFlowStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataFlowStatusLabel.Location = new System.Drawing.Point(693, 1);
+            this.dataFlowStatusLabel.Name = "dataFlowStatusLabel";
+            this.dataFlowStatusLabel.Size = new System.Drawing.Size(166, 45);
+            this.dataFlowStatusLabel.TabIndex = 2;
+            this.dataFlowStatusLabel.Text = "Data Status: Idle";
+            this.dataFlowStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(866, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 45);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Displaying: 0%";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
@@ -508,6 +563,7 @@
             this.resolutionPanel.ResumeLayout(false);
             this.resolutionPanel.PerformLayout();
             this.dataControlPanel.ResumeLayout(false);
+            this.dataControlPanel.PerformLayout();
             this.infoPanel.ResumeLayout(false);
             this.infoPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -534,10 +590,13 @@
         private System.Windows.Forms.ComboBox blockSizeComboBox;
         private System.Windows.Forms.TableLayoutPanel dataControlPanel;
         private System.Windows.Forms.Button uploadSettingsBtn;
-        private System.Windows.Forms.Button startStopDataFlowBtn;
-        private System.Windows.Forms.Button startStopRecordDataBtn;
         private System.Windows.Forms.TableLayoutPanel infoPanel;
         private System.Windows.Forms.Label dataLocationLabel;
+        private System.Windows.Forms.Label storageSpaceLabel;
+        private System.Windows.Forms.Label dataFlowStatusLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox startStopDataFlowBtn;
+        private System.Windows.Forms.CheckBox startStopDataRecordBtn;
     }
 }
 
